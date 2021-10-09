@@ -1,0 +1,159 @@
+import React from 'react';
+import { styles } from './CartPagesContainer.style';
+import { withStyles } from '@material-ui/styles';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import Link from '@mui/material/Link';
+import Brightness1Icon from '@mui/icons-material/Brightness1';
+import TextField from '@mui/material/TextField';
+
+// import FormControl from '@mui/material/FormControl';
+import Input from '@mui/material/Input';
+import Select from '@mui/material/Select';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Button from '@material-ui/core/Button';
+
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+
+const Invoice = ({ classes }) => {
+    return (
+        <Grid container spacing={2} sx={{ width: '70%', margin: '0 auto', display: 'flex', justifyContent: 'space-evenly' }}>
+            <Grid xs={6}>
+                <Box sx={{textAlign:'left'}}>
+                    <Typography variant='h6' sx={{ fontSize: '14px' }}>
+                        BILLING ADDRESS
+                    </Typography>
+                    <Typography variant='h6' sx={{ fontSize: '12px',  fontWeight: 'light' }}>
+                        Ibrahim Alvi
+                    </Typography>
+                    <Typography variant='h6' sx={{ fontSize: '12px',  fontWeight: 'light' }}>
+                        Sindh
+                    </Typography>
+                    <Typography variant='h6' sx={{ fontSize: '12px',  fontWeight: 'light' }}>
+                        075471 Karachi
+                    </Typography>
+                    <Link href="#" className={classes.editLink}>
+                        edit to
+                    </Link>
+
+                </Box>
+                <Box sx={{textAlign:'left'}}>
+                    <Typography variant='h6' sx={{ fontSize: '14px' }}>
+                        DELIVERY OPTIONS
+
+                    </Typography>
+                    <Typography variant='h6' sx={{ fontSize: '12px', fontWeight: 'light' }}>
+                        like invoice address
+                    </Typography>
+                    <Link href="#" className={classes.editLink}>
+                        edit to
+                    </Link>
+
+                </Box>
+                <Grid xs={12} sx={{ paddingTop: '10px', backgroundColor: '#d3d9de', width: '100%', textAlign: 'left', padding: '15px' }}>
+                    <FormControl component="fieldset">
+                        <FormLabel component="legend">Payment Options</FormLabel>
+                        <RadioGroup
+                            aria-label="gender"
+                            defaultValue="invoice"
+                            name="radio-buttons-group"
+                        >
+                            <FormControlLabel value="invoice" control={<Radio />} label="invoice" />
+                        </RadioGroup>
+                    </FormControl>
+                    <Button fullWidth={true} variant="contained" size="large" color='primary' >
+                        CheckOut
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid xs={6}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', }}>
+                    <Box className={classes.itemImg}>
+                        <img src='https://konfigurator.walbusch.de/savedconfigurations/XR026A_s.png' width='100%' />
+                    </Box>
+                    <Box>
+                        <Typography variant='h6' sx={{ fontSize: '13px', fontWeight: 'bold' }}>
+                            1x made-to-measure shirt
+                        </Typography>
+                        <List sx={{ width: '100%', maxWidth: 360, fontSize: '12px', lineHeight: '0.7px' }}>
+                            <ListItem>
+                                Uni red
+                            </ListItem>
+                            <ListItem>
+                                Shirt poplin
+
+                            </ListItem>
+                            <ListItem>
+                                Comfort Fit
+
+                            </ListItem>
+                            <ListItem>
+                                Kent
+
+                            </ListItem>
+                            <ListItem>
+                                Button placket: tucked in
+
+                            </ListItem>
+                            <ListItem>
+                                Article no.XR026A
+                            </ListItem>
+
+                        </List>
+                        <Grid container spacing={3} sx={{ margin: '10px', display: 'flex', alignItems: 'center' }}>
+                            <Grid xs={8}>
+                                <Typography variant='p' sx={{ fontSize: '11px', display: 'flex' }}>
+                                    <Brightness1Icon fontSize='small' color='success' />   Delivery in 3-4 weeks
+                                </Typography>
+                            </Grid>
+                            <Grid xs={4}>
+                                <Typography variant='p' sx={{ fontSize: '11px' }}>
+                                    € 110.00
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                        <Box container sx={{ width: '90%', borderTop: '3px solid silver', marginTop: '10px', marginLeft: '12px' }}>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <Box sx={{ width: '45%' }}>
+                                    <Typography variant='p' sx={{ fontSize: '11px' }}>
+                                        Shipping
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ width: '45%' }}>
+                                    <Typography variant='p' sx={{ fontSize: '11px' }}>
+                                        € 110.00
+                                    </Typography>
+                                </Box>
+                            </Box>
+                            <Box xs={6} sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                <Box sx={{ width: '45%' }}>
+                                    <Typography variant='p' sx={{ fontSize: '11px' }}>
+                                        Total
+                                    </Typography>
+                                </Box>
+                                <Box sx={{ width: '45%' }}>
+                                    <Typography variant='p' sx={{ fontSize: '11px' }}>
+                                        € 110.00
+                                    </Typography>
+                                </Box>
+                            </Box>
+
+                        </Box>
+
+                    </Box></Box>
+            </Grid>
+        </Grid>
+    )
+}
+
+export default withStyles(styles)(Invoice);
