@@ -36,9 +36,13 @@ const styles = {
         width:'20%',
         height:'70%',
         fontFamily: 'Bowlby One ,cursive',
-        fontSize:'30px',
+        fontSize:'35px',
         display:'flex',
         alignItems:'center',
+        '& a':{
+            textDecoration:'none',
+            color:'black'
+        },
         '&:hover':{
             cursor:'pointer'
         }
@@ -83,6 +87,7 @@ const styles = {
         width:'50%',
         height:'80%',
         display:'flex',
+        alignItems:'center'
     },
     cartLogo:{
         fontSize:'35px',
@@ -92,7 +97,8 @@ const styles = {
     },
     cartText:{
         fontFamily: 'Titillium Web sans-serif',
-        display:'flex',
+        margin:'15px',
+        // display:'flex',
         '&:hover':{
             cursor:'pointer'
         }

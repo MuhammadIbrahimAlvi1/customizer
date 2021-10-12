@@ -8,10 +8,10 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import Link from '@mui/material/Link';
+import MaterialLink from '@mui/material/Link';
 import Brightness1Icon from '@mui/icons-material/Brightness1';
 import TextField from '@mui/material/TextField';
-
+import { Link } from 'react-router-dom';
 // import FormControl from '@mui/material/FormControl';
 import Input from '@mui/material/Input';
 import Select from '@mui/material/Select';
@@ -25,7 +25,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-const Order = ({ classes }) => {
+const Invoice = ({ classes }) => {
+    debugger;
     return (
         <Grid container spacing={2} sx={{ width: '70%', margin: '0 auto', display: 'flex', justifyContent: 'space-evenly' }}>
             <Grid xs={6}>
@@ -42,27 +43,40 @@ const Order = ({ classes }) => {
                     <Typography variant='h6' sx={{ fontSize: '12px', fontWeight: 'light' }}>
                         075471 Karachi
                     </Typography>
-                    <Link href="#" className={classes.editLink}>
-                        edit
-                    </Link>
+                    <MaterialLink href="#" className={classes.editLink}>
+                        edit to
+                    </MaterialLink>
 
                 </Box>
-                <Grid xs={12} sx={{ paddingTop: '10px', backgroundColor: '#d3d9de', width: '100%' }}>
-                    <FormControl component="fieldset">
+                <Box sx={{ textAlign: 'left' }}>
+                    <Typography variant='h6' sx={{ fontSize: '14px' }}>
+                        DELIVERY OPTIONS
 
+                    </Typography>
+                    <Typography variant='h6' sx={{ fontSize: '12px', fontWeight: 'light' }}>
+                        like invoice address
+                    </Typography>
+                    <MaterialLink href="#" className={classes.editLink}>
+                        edit to
+                    </MaterialLink>
+
+                </Box>
+                <Grid xs={12} sx={{ paddingTop: '10px', backgroundColor: '#d3d9de', width: '100%', textAlign: 'left', padding: '15px' }}>
+                    <FormControl component="fieldset">
+                        <FormLabel component="legend">Payment Options</FormLabel>
                         <RadioGroup
                             aria-label="gender"
-                            defaultValue="Billing Address"
+                            defaultValue="invoice"
                             name="radio-buttons-group"
                         >
-                            <FormControlLabel value="Billing Address" control={<Radio />} label="Billing Address" />
-                            <FormControlLabel value="Different Shipping Address" control={<Radio />} label="Different Shipping Address" />
-
+                            <FormControlLabel value="invoice" control={<Radio />} label="invoice" />
                         </RadioGroup>
                     </FormControl>
-                    <Button fullWidth={true} variant="contained" size="large" color='primary' >
-                        CheckOut
-                    </Button>
+                    {/* <Link to='/thanksforshop'> */}
+                        <Button fullWidth={true} variant="contained" size="large" color='primary' >
+                            CheckOut
+                        </Button>
+                    {/* </Link> */}
                 </Grid>
             </Grid>
             <Grid xs={6}>
@@ -99,7 +113,7 @@ const Order = ({ classes }) => {
                             </ListItem>
 
                         </List>
-                        <Grid container spacing={4} sx={{ margin: '10px', display: 'flex', alignItems: 'center' }}>
+                        <Grid container spacing={3} sx={{ margin: '10px', display: 'flex', alignItems: 'center' }}>
                             <Grid xs={8}>
                                 <Typography variant='p' sx={{ fontSize: '11px', display: 'flex' }}>
                                     <Brightness1Icon fontSize='small' color='success' />   Delivery in 3-4 weeks
@@ -139,11 +153,10 @@ const Order = ({ classes }) => {
 
                         </Box>
 
-                    </Box>
-                </Box>
+                    </Box></Box>
             </Grid>
         </Grid>
     )
 }
 
-export default withStyles(styles)(Order);
+export default withStyles(styles)(Invoice);

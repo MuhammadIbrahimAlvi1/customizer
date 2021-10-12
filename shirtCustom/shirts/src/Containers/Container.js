@@ -6,7 +6,7 @@ import Footer from '../Components/footer/Footer';
 import Measurement from '../Components/madetomeasure/Measurement';
 import CartPagesContainer from '../Components/CartPages/CartPagesContainer';
 import ThanksForShopping from '../Components/ThanksForShopping/ThanksForShopping';
-import ShoppingCart from '../Components/CartPages/ShoppingCart';
+// import ShoppingCart from '../Components/CartPages/ShoppingCart';
 import SignUp from '../Components/CartPages/SignUp';
 import Order from '../Components/CartPages/Order';
 import Invoice from '../Components/CartPages/Invoice';
@@ -17,8 +17,11 @@ import {
     Route,
     Link
 } from "react-router-dom";
-
+import { useRoutes } from 'react-router-dom';
+import ShoppingCart from '../Components/CartPages/ShoppingCart';
 const Container = ({ classes }) => {
+
+
 
     return (
 
@@ -28,24 +31,22 @@ const Container = ({ classes }) => {
 
                     <Navbar />
                     <Routes>
-                        <Route path="/" element={<Dashboard/>} />
-                       
-                        <Route path="/thanksforshop" element={<ThanksForShopping/>} />
-                        
-                        <Route path="/varity" element={ <Measurement />} />
-                        <Route path='/varity/inthecart' element={<CartPagesContainer/>}/>
-                        
-                    </Routes>
+                        <Route path="/" element={<Dashboard />} />
 
+                        <Route path="/thanksforshop" element={<ThanksForShopping />} />
+
+                        <Route path="/varity" element={<Measurement />} />
+                        <Route path='/varity/cart' element={<CartPagesContainer/>}/>
+                        <Route path='/varity/cart/:type' element={<CartPagesContainer />} />
+                        <Route path='/invoice' element={<Invoice />} />
+                        {/* <Route path='/thanksforshopping' element={<ThanksForShopping/>}/> */}
+                    </Routes>
                 </Router>
 
                 {/* <CartPagesContainer/> */}
-            
+
             </div>
             {/* <Footer /> */}
-
-            {/* <div className={classes.header}>
-            </div> */}
         </div>
     );
 }

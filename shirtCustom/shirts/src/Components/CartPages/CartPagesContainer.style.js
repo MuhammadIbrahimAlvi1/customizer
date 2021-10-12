@@ -32,6 +32,12 @@ const styles = {
         textAlign: 'left',
         textDecoratiion: 'none',
         color:'black'
+    },
+    btn:{
+        '& a':{
+            textDecoration:'none',
+            color:'#fff'
+        }
     }
 }
 export {

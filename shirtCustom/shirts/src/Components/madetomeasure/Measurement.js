@@ -34,7 +34,7 @@ const Measurement = ({ classes }) => {
                 Lot <input type='text' className={classes.inputLot}/>
             </Box>
             <Box className={classes.measurementquantity}>
-                <Link to='/varity/inthecart'>
+                <Link to='/varity/cart/item'>
                 <Button variant="contained" size="large" color="primary" >
                     IN THE CART
                 </Button>
